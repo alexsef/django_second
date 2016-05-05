@@ -1,0 +1,25 @@
+.img-main img {
+    margin-top: 20px;
+    opacity:0.8;
+    -moz-opacity:0.8;
+    filter: alpha(opacity=80) black;
+    -khtml-opacity: 0.8;
+    background-color:#000;
+}
+ 
+.img-main img:hover {
+    opacity:1;
+    -moz-opacity:1;
+    filter: alpha(opacity=100) black;
+    -khtml-opacity: 1;
+    background-color:#000;
+}
+.main {
+    margin-top: 10px;
+}
+.icon {
+    margin-right: 7px;
+}
+.center {
+    text-align: center;
+}
