@@ -1,5 +1,5 @@
 from django.db import models
-# from datetime import datetime
+from datetime import datetime
 
 
 class Brands(models.Model):
@@ -10,6 +10,8 @@ class Brands(models.Model):
 
     brand = models.CharField(max_length=255, verbose_name='Брэнд', blank=True, null=True)
     description = models.TextField(verbose_name='Описание', blank=True, null=True)
+    created = models.DateTimeField(verbose_name='Дата основания', auto_now_add=True, blank=True, null=True)
+
 
     def __str__(self):
         return '%s' % (self.brand)
@@ -32,6 +34,8 @@ class Shoes(models.Model):
     size_41 = models.BooleanField(verbose_name='Размер 41')
     size_42 = models.BooleanField(verbose_name='Размер 42')
     size_43 = models.BooleanField(verbose_name='Размер 43')
+    created = models.DateTimeField(verbose_name='Дата поступления', auto_now_add=True, blank=True, null=True)
+
 
     def __str__(self):
         return '%s' % (self.title)
@@ -53,14 +57,17 @@ class Goods(models.Model):
     material = models.CharField(max_length=255, verbose_name='Материал', blank=True, null=True)
     style = models.CharField(max_length=255, verbose_name='Фасон', blank=True, null=True)
     color = models.CharField(max_length=255, verbose_name='Цвет', blank=True, null=True)
+    created = models.DateTimeField(verbose_name='Дата поступления', auto_now_add=True, blank=True, null=True)
+
 
     def __str__(self):
         return '%s' % (self.title)
 
 
-jacets_ch = (
-    ('man', 'Мужская куртка'),
-    ('woman', 'Женская куртка'),
+sex_ch = (
+    ('man', 'Man'),
+    ('woman', 'Woman'),
+    ('unisex', 'Unisex'),
 )
 
 
@@ -70,7 +77,7 @@ class Jacets(models.Model):
         verbose_name = 'Куртка'
         verbose_name_plural = 'Куртки'
 
-    sex = models.SlugField(verbose_name='Пол', choices=jacets_ch, blank=True, null=True)
+    sex = models.SlugField(verbose_name='Пол', choices=sex_ch, blank=True, null=True)
     brand = models.ForeignKey(Brands)
     title = models.CharField(max_length=255, verbose_name='Наименование', blank=True, null=True)
     image = models.ImageField(width_field='width_field',
@@ -85,12 +92,14 @@ class Jacets(models.Model):
     size_M = models.BooleanField(verbose_name='Размер M')
     size_L = models.BooleanField(verbose_name='Размер L')
     size_XL = models.BooleanField(verbose_name='Размер XL')
+    created = models.DateTimeField(verbose_name='Дата поступления', auto_now_add=True, blank=True, null=True)
+
 
     def __str__(self):
         return '%s' % (self.title)
 
 
-skate_ch = (
+size_ch = (
     ('7.5', '7.5'),
     ('8', '8'),
     ('8.25', '8.25'),
@@ -113,12 +122,14 @@ class Skateboards(models.Model):
     brand = models.ForeignKey(Brands)
     type_skate = models.SlugField(verbose_name='Тип скейтборда', choices=type_sk, blank=True, null=True)
     title = models.CharField(max_length=255, verbose_name='Наименование', blank=True, null=True)
-    size = models.SlugField(verbose_name='Размер', choices=skate_ch, blank=True, null=True)
+    size = models.SlugField(verbose_name='Размер', choices=size_ch, blank=True, null=True)
     image = models.ImageField(width_field='width_field',
                               height_field='height_field',
                               verbose_name='Фото')
     width_field = models.IntegerField(default=0)
     height_field = models.IntegerField(default=0)
+    created = models.DateTimeField(verbose_name='Дата поступления', auto_now_add=True, blank=True, null=True)
+
 
     def __str__(self):
         return '%s' % (self.title)
@@ -143,11 +154,79 @@ class Backpacks(models.Model):
                               verbose_name='Фото')
     width_field = models.IntegerField(default=0)
     height_field = models.IntegerField(default=0)
+    created = models.DateTimeField(verbose_name='Дата поступления', auto_now_add=True, blank=True, null=True)
+
 
     def __str__(self):
         return '%s' % (self.title)
 
 
+class Spectacles(models.Model):
+    class Meta:
+        db_table = 'Очочки'
+        verbose_name = 'Очки'
+        verbose_name_plural = 'Очки'
+
+    brand = models.ForeignKey(Brands)
+    title = models.CharField(max_length=255, verbose_name='Наименование', blank=True, null=True)
+    image = models.ImageField(width_field='width_field',
+                              height_field='height_field',
+                              verbose_name='Фото')
+    width_field = models.IntegerField(default=0)
+    height_field = models.IntegerField(default=0)
+    created = models.DateTimeField(verbose_name='Дата поступления', auto_now_add=True, blank=True, null=True)
+    sex = models.SlugField(verbose_name='Пол', choices=sex_ch, blank=True, null=True)
+
+    def __str__(self):
+        return '%s' % (self.title)
+
+
+class Accessories(models.Model):
+    class Meta:
+        db_table = 'Аксессуары'
+        verbose_name = 'Аксессуар'
+        verbose_name_plural = 'Аксессуары'
+
+    brand = models.ForeignKey(Brands)
+    title = models.CharField(max_length=255, verbose_name='Наименование', blank=True, null=True)
+    image = models.ImageField(width_field='width_field',
+                              height_field='height_field',
+                              verbose_name='Фото')
+    width_field = models.IntegerField(default=0)
+    height_field = models.IntegerField(default=0)
+    created = models.DateTimeField(verbose_name='Дата поступления', auto_now_add=True, blank=True, null=True)
+    sex = models.SlugField(verbose_name='Пол', choices=sex_ch, blank=True, null=True)
+
+    def __str__(self):
+        return '%s' % (self.title)
+
+
+size_snow_ch = (
+    ('150', '150'),
+    ('160', '160'),
+    ('170', '170'),
+)
+
+
+class Snowboards(models.Model):
+    class Meta:
+        db_table = 'Сноуборды'
+        verbose_name = 'Сноуборд'
+        verbose_name_plural = 'Сноуборды'
+
+    brand = models.ForeignKey(Brands)
+    title = models.CharField(max_length=255, verbose_name='Наименование', blank=True, null=True)
+    image = models.ImageField(width_field='width_field',
+                              height_field='height_field',
+                              verbose_name='Фото')
+    width_field = models.IntegerField(default=0)
+    height_field = models.IntegerField(default=0)
+    created = models.DateTimeField(verbose_name='Дата поступления', auto_now_add=True, blank=True, null=True)
+    sex = models.SlugField(verbose_name='Пол', choices=sex_ch, blank=True, null=True)
+    size = models.SlugField(verbose_name='Размер', choices=size_snow_ch, blank=True, null=True)
+
+    def __str__(self):
+        return '%s' % (self.title)
 
 
 
