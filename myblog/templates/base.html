@@ -10,6 +10,9 @@
     <link href="/static/css/font-awesome.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/js.js"></script>
+
+
     <title>Blog</title>
 </head>
 <body>
@@ -23,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="#" class="navbar-brand">Логотип</a>
+                <a href="{% url 'home' %}" class="navbar-brand">Логотип</a>
             </div>
             <div class="collapse navbar-collapse" id="q">
                 <ul class="nav navbar-nav">
@@ -38,6 +41,7 @@
                         <li><a href="https://www.instagram.com/i_am_buttercup/" target="_blank"><i class="fa fa-instagram icon"></i>Мы в Instagram</a></li>
                         <li><a href="http://www.youtube.com/channel/UCsjDt3QtyNU19QbSv5se5Fg" target="_blank"><i class="fa fa-youtube icon"></i>Мы на Youtube</a></li>
                         <li class="divider"></li>
+                        <li role="presentation" class="dropdown-header">Телефон:</li>
                         <li><a><i class="fa fa-phone icon"></i>+7-981-818-99-17</a></li>
 
                     </ul>

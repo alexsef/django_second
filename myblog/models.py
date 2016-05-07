@@ -10,6 +10,11 @@ class Brands(models.Model):
 
     brand = models.CharField(max_length=255, verbose_name='Брэнд', blank=True, null=True)
     description = models.TextField(verbose_name='Описание', blank=True, null=True)
+    image = models.ImageField(width_field='width_field',
+                              height_field='height_field',
+                              verbose_name='Фото', blank=True, null=True)
+    width_field = models.IntegerField(default=0)
+    height_field = models.IntegerField(default=0)
     created = models.DateTimeField(verbose_name='Дата основания', auto_now_add=True, blank=True, null=True)
 
 
@@ -228,6 +233,25 @@ class Snowboards(models.Model):
     def __str__(self):
         return '%s' % (self.title)
 
+
+class Belts(models.Model):
+    class Meta:
+        db_table = 'Ремни'
+        verbose_name = 'Ремень'
+        verbose_name_plural = 'Ремни'
+
+    brand = models.ForeignKey(Brands)
+    title = models.CharField(max_length=255, verbose_name='Наименование', blank=True, null=True)
+    image = models.ImageField(width_field='width_field',
+                              height_field='height_field',
+                              verbose_name='Фото')
+    width_field = models.IntegerField(default=0)
+    height_field = models.IntegerField(default=0)
+    created = models.DateTimeField(verbose_name='Дата поступления', auto_now_add=True, blank=True, null=True)
+    sex = models.SlugField(verbose_name='Пол', choices=sex_ch, blank=True, null=True)
+
+    def __str__(self):
+        return '%s' % (self.title)
 
 
 

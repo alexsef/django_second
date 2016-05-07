@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div id="carousel" class="carousel slide">
+    <div id="carousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li class="active" data-target="#carousel" data-slide-to="0"></li>
             <li data-target="#carousel" data-slide-to="1"></li>
@@ -39,21 +39,21 @@
     <div class="container main">
         <div class="row">
             <div class="col-md-4 img-main">
-                <p class="center"><a href=""><img class="img-circle" src="/static/4.jpg" alt=""></a></p>
-               <p class="center"><a href=""><img src="/static/12.jpg" alt=""></a> </p>
-               <p class="center"><a href=""><img src="/static/11.jpg" alt=""></a></p>
+                <p class="center"><a href="{% url 'snapback' %}"><img class="img-circle" src="/static/4.jpg" alt=""></a></p>
+               <p class="center"><a href="{% url 'jackets' %}"><img src="/static/12.jpg" alt=""></a> </p>
+               <p class="center"><a href="{% url 'skateboards' %}"><img src="/static/11.jpg" alt=""></a></p>
             </div>
             <div class="col-md-4 img-main">
-                <p class="center"><a href=""><img src="/static/5.jpg" alt=""></a></p>
-                <p class="center"><a href=""><img src="/static/8.jpg" alt=""></a></p>
-                <p class="center"><a href=""><img src="/static/13.jpeg" alt=""></a></p>
-                <p class="center"><a href=""><img src="/static/14.jpg" alt=""></a></p>
+                <p class="center"><a href="{% url 'shoes' %}"><img src="/static/5.jpg" alt=""></a></p>
+                <p class="center"><a href="{% url 'skateboards' %}"><img src="/static/8.jpg" alt=""></a></p>
+                <p class="center"><a href="{% url 'glasses' %}"><img src="/static/13.jpeg" alt=""></a></p>
+                <p class="center"><a href="{% url 'accessories' %}"><img src="/static/14.jpg" alt=""></a></p>
 
             </div>
             <div class="col-md-4 img-main">
-                <p class="center"><a href=""><img src="/static/6.jpg" alt=""></a></p>
-                <p class="center"><a href=""><img src="/static/9.jpg" alt=""></a></p>
-                <p class="center"><a href=""><img src="/static/10.jpg" alt=""></a> </p>
+                <p class="center"><a href="{% url 'jackets' %}"><img src="/static/6.jpg" alt=""></a></p>
+                <p class="center"><a href="{% url 'backpacks' %}"><img src="/static/9.jpg" alt=""></a></p>
+                <p class="center"><a href="{% url 'snowboards' %}"><img src="/static/10.jpg" alt=""></a> </p>
 
             </div>
         </div>
