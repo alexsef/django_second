@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Goods, Shoes, Jacets, Brands, Skateboards, Backpacks, Spectacles, Accessories, Belts
+from .models import *
 
 
 class GoodsAdmin(admin.ModelAdmin):
@@ -65,6 +65,13 @@ class BeltsAdmin(admin.ModelAdmin):
     search_fields = ('title',)
 
 
+class MaterialsAdmin(admin.ModelAdmin):
+    list_display = ('material',)
+    list_filter = ('created',)
+    exclude = ('created',)
+    search_fields = ('material',)
+
+
 admin.site.register(Goods, GoodsAdmin)
 admin.site.register(Shoes, ShoesAdmin)
 admin.site.register(Jacets, JacetsAdmin)
@@ -74,3 +81,4 @@ admin.site.register(Backpacks, BackpacksAdmin)
 admin.site.register(Spectacles, SpectaclesAdmin)
 admin.site.register(Accessories, AccessoriesAdmin)
 admin.site.register(Belts, BeltsAdmin)
+admin.site.register(Materials, MaterialsAdmin)

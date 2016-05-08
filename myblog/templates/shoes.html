@@ -1,5 +1,46 @@
 {% extends "base_level2.html" %}
 {% block cat %}Обувь{% endblock %}
 {% block item %}
-    <p>Shoes</p>
+    <ul class="nav nav-tabs nav-justified ">
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            Размер<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="">41</a></li>
+                <li><a href="">42</a></li>
+                <li><a href="">43</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Брэнд<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                {% for brand in brands %}
+                    <li><a href="">{{ brand.brand }}</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Материал <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            {% for mat in material %}
+                <li><a href="">{{ mat.material }}</a></li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a href="" class="dropdown-toggle" data-toggle="dropdown">Цена<span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="">До 4000руб.</a></li>
+            <li><a href="">До 5000руб.</a></li>
+            <li><a href="">До 6000руб.</a></li>
+            <li><a href="">До 7000руб.</a></li>
+            <li><a href="">До 8000руб.</a></li>
+        </ul>
+    </li>
+</ul>
 {% endblock %}

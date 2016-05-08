@@ -29,3 +29,12 @@
 .navbar {
     margin-bottom: 0px;
 }
+#qq {
+    position: fixed;
+    top: 150px;
+    z-index: 10000;
+}
+.row {
+    min-height: 1000px;
+    top: 0px
+}

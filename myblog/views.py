@@ -1,7 +1,19 @@
 from django.http import HttpResponse, Http404, HttpResponseRedirect
-from .models import Goods, Shoes, Jacets, Brands, Skateboards, Backpacks, Spectacles, Accessories, Snowboards, Belts
+from .models import *
 # from django.views.generic import TemplateView
 from django.shortcuts import render, render_to_response
+
+
+def shoes(request):
+    shoes = Shoes.objects.all().order_by('title')
+    material = Materials.objects.all().order_by('material')
+    brands = Brands.objects.all().order_by('brand')
+    context = {
+        'brands' : brands,
+        'shoes' : shoes,
+        'material' : material,
+    }
+    return render_to_response("shoes.html", context)
 
 
 def snapback(request):
@@ -10,15 +22,6 @@ def snapback(request):
         'snapback' : snapback,
     }
     return render_to_response("snapback.html", context)
-
-def shoes(request):
-    shoes = Shoes.objects.all()
-    brands = Brands.objects.all()
-    context = {
-        'brands' : brands,
-        'shoes' : shoes,
-    }
-    return render_to_response("shoes.html", context)
 
 
 def jackets(request):
