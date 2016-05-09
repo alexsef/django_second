@@ -42,5 +42,18 @@
             <li><a href="">До 8000руб.</a></li>
         </ul>
     </li>
-</ul>
+    </ul>
+    <div class="container-fluid">
+        <div class="row">
+                {% for sh in shoes %}
+                    <div class="div-item">
+                        <img class="img-item" src="{{ sh.image.url }}" alt="image">
+                        <strong>{{ sh.brand.brand }}</strong>
+                        <p>{{ sh.title }}</p>
+                        <strong>{{ sh.price }} Р</strong>
+                    </div>
+                {% endfor %}
+            
+        </div>
+    </div>
 {% endblock %}

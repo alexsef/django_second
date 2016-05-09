@@ -23,18 +23,29 @@
 .center {
     text-align: center;
 }
-/*.breadcrumb {
-    margin-top: 0px;
-}*/
 .navbar {
     margin-bottom: 0px;
-}
-#qq {
-    position: fixed;
-    top: 150px;
-    z-index: 10000;
 }
 .row {
     min-height: 1000px;
     top: 0px
+}
+.img-item {
+    text-align: center;
+    width: 269px;
+    height: 269px;
+}
+.img-item-jac {
+    text-align: center;
+    width: 269px;
+    height: 360px;
+}
+.div-item {
+    display: inline-block;
+    margin-top: 20px;
+    width: 279px;
+    text-align: center;
+}
+#footer {
+    margin-top: 20px;
 }

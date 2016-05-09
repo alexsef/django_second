@@ -18,7 +18,9 @@ def shoes(request):
 
 def snapback(request):
     snapback = Goods.objects.all()
+    brands = Brands.objects.all().order_by('brand')
     context = {
+        'brands' : brands,
         'snapback' : snapback,
     }
     return render_to_response("snapback.html", context)
@@ -26,7 +28,11 @@ def snapback(request):
 
 def jackets(request):
     jackets = Jacets.objects.all()
+    material = Materials.objects.all().order_by('material')
+    brands = Brands.objects.all().order_by('brand')
     context = {
+        'brands' : brands,
+        'material' : material,
         'jackets' : jackets,
     }
     return render_to_response("jackets.html", context)

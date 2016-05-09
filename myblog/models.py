@@ -79,6 +79,7 @@ class Goods(models.Model):
     image = models.ImageField(width_field='width_field',
                               height_field='height_field',
                               verbose_name='Фото')
+    price = models.IntegerField(verbose_name='Цена', blank=True, null=True)
     width_field = models.IntegerField(default=0)
     height_field = models.IntegerField(default=0)
     material = models.ForeignKey(Materials, verbose_name='Материал', blank=True, null=True)
@@ -106,6 +107,7 @@ class Jacets(models.Model):
     width_field = models.IntegerField(default=0)
     height_field = models.IntegerField(default=0)
     material = models.ForeignKey(Materials, verbose_name='Материал', blank=True, null=True)
+    price = models.IntegerField(verbose_name='Цена', blank=True, null=True)
     style = models.CharField(max_length=255, verbose_name='Фасон', blank=True, null=True)
     color = models.CharField(max_length=255, verbose_name='Цвет', blank=True, null=True)
     size_S = models.BooleanField(verbose_name='Размер S')
