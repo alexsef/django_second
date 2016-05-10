@@ -35,7 +35,7 @@
     width: 269px;
     height: 269px;
 }
-.img-item-jac {
+.img-item-jacf {
     text-align: center;
     width: 269px;
     height: 360px;
@@ -48,4 +48,29 @@
 }
 #footer {
     margin-top: 20px;
+}
+.img-item-sk {
+    text-align: center;
+    width: 269px;
+    height: 120px;
+}
+.img-item-back {
+    text-align: center;
+    width: 269px;
+    height: 350px;
+}
+.img-item-glass {
+    text-align: center;
+    width: 269px;
+    height: 165px;
+}
+.img-item-acc {
+    text-align: center;
+    width: 269px;
+    height: 165px;
+}
+.img-item-sn {
+    text-align: center;
+    width: 269px;
+    height: 450px;
 }

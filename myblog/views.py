@@ -27,19 +27,35 @@ def snapback(request):
 
 
 def jackets(request):
-    jackets = Jacets.objects.all()
+    jackets_man = Jacets.objects.filter(sex='man')
+    
     material = Materials.objects.all().order_by('material')
     brands = Brands.objects.all().order_by('brand')
     context = {
         'brands' : brands,
         'material' : material,
-        'jackets' : jackets,
+        'jackets' : jackets_man,
     }
     return render_to_response("jackets.html", context)
 
+
+def jackets_woman(request):
+    jackets_woman = Jacets.objects.filter(sex='woman')
+    material = Materials.objects.all().order_by('material')
+    brands = Brands.objects.all().order_by('brand')
+    context = {
+        'brands' : brands,
+        'material' : material,
+        'jackets' : jackets_woman,
+    }
+    return render_to_response("jackets.html", context)
+
+
 def skateboards(request):
     skateboards = Skateboards.objects.all()
+    brands = Brands.objects.all().order_by('brand')
     context = {
+        'brands' : brands,
         'skateboards' : skateboards,
     }
     return render_to_response("skateboards.html", context)
@@ -51,12 +67,12 @@ def backpacks(request):
     }
     return render_to_response("backpacks.html", context)
 
-def belts(request):
-    belts = Belts.objects.all()
-    context = {
-        'belts' : belts,
-    }
-    return render_to_response("belts.html", context)
+# def belts(request):
+#     belts = Belts.objects.all()
+#     context = {
+#         'belts' : belts,
+#     }
+#     return render_to_response("belts.html", context)
 
 def snowboards(request):
     snowboards = Snowboards.objects.all()

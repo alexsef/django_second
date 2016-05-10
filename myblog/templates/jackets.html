@@ -48,13 +48,12 @@
         <div class="row">
                 {% for jac in jackets %}
                     <div class="div-item">
-                        <img class="img-item-jac" src="{{ jac.image.url }}" alt="image">
+                        <img class="img-item-jacf" src="{{ jac.image.url }}" alt="image">
                         <strong>{{ jac.brand.brand }}</strong>
                         <p>{{ jac.title }}</p>
                         <strong>{{ jac.price }} Р</strong>
                     </div>
                 {% endfor %}
-            
         </div>
     </div>
 {% endblock %}

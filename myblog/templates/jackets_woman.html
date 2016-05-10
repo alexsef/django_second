@@ -1,7 +1,7 @@
 {% extends "base_level2.html" %}
-{% block cat %}Аксессуары{% endblock %}
+{% block cat %}Куртки{% endblock %}
 {% block item %}
-        <ul class="nav nav-tabs nav-justified ">
+    <ul class="nav nav-tabs nav-justified ">
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
             Размер<span class="caret"></span>
@@ -36,22 +36,22 @@
         <a href="" class="dropdown-toggle" data-toggle="dropdown">Цена<span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
-            <li><a href="">До 1000руб.</a></li>
-            <li><a href="">До 1400руб.</a></li>
-            <li><a href="">До 1600руб.</a></li>
-            <li><a href="">До 1800руб.</a></li>
-            <li><a href="">До 2000руб.</a></li>
+            <li><a href="">До 3000руб.</a></li>
+            <li><a href="">До 7000руб.</a></li>
+            <li><a href="">До 10000руб.</a></li>
+            <li><a href="">До 13000руб.</a></li>
+            <li><a href="">До 15000руб.</a></li>
         </ul>
     </li>
     </ul>
     <div class="container-fluid">
         <div class="row">
-                {% for acc in accessories %}
+                {% for jac in jackets_woman %}
                     <div class="div-item">
-                        <img class="img-item-acc" src="{{ acc.image.url }}" alt="image">
-                        <strong>{{ acc.brand.brand }}</strong>
-                        <p>{{ acc.title }}</p>
-                        <strong>{{ acc.price }} Р</strong>
+                        <img class="img-item-jacf" src="{{ jac.image.url }}" alt="image">
+                        <strong>{{ jac.brand.brand }}</strong>
+                        <p>{{ jac.title }}</p>
+                        <strong>{{ jac.price }} Р</strong>
                     </div>
                 {% endfor %}
         </div>

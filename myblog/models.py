@@ -144,6 +144,7 @@ class Skateboards(models.Model):
     brand = models.ForeignKey(Brands)
     type_skate = models.CharField(max_length=255, verbose_name='Тип скейтборда', choices=type_sk, blank=True, null=True)
     title = models.CharField(max_length=255, verbose_name='Наименование', blank=True, null=True)
+    price = models.IntegerField(verbose_name='Цена', blank=True, null=True)
     size = models.CharField(max_length=255, verbose_name='Размер', choices=size_ch, blank=True, null=True)
     image = models.ImageField(width_field='width_field',
                               height_field='height_field',
@@ -197,8 +198,8 @@ class Spectacles(models.Model):
                               verbose_name='Фото')
     width_field = models.IntegerField(default=0)
     height_field = models.IntegerField(default=0)
+    price = models.IntegerField(verbose_name='Цена', blank=True, null=True)
     created = models.DateTimeField(verbose_name='Дата поступления', auto_now_add=True, blank=True, null=True)
-    sex = models.CharField(max_length=255, verbose_name='Пол', choices=sex_ch, blank=True, null=True)
 
     def __str__(self):
         return '%s' % (self.title)
@@ -217,6 +218,7 @@ class Accessories(models.Model):
                               verbose_name='Фото')
     width_field = models.IntegerField(default=0)
     height_field = models.IntegerField(default=0)
+    price = models.IntegerField(verbose_name='Цена', blank=True, null=True)
     created = models.DateTimeField(verbose_name='Дата поступления', auto_now_add=True, blank=True, null=True)
     sex = models.CharField(max_length=255, verbose_name='Пол', choices=sex_ch, blank=True, null=True)
 
@@ -239,6 +241,7 @@ class Snowboards(models.Model):
 
     brand = models.ForeignKey(Brands)
     title = models.CharField(max_length=255, verbose_name='Наименование', blank=True, null=True)
+    price = models.IntegerField(verbose_name='Цена', blank=True, null=True)
     image = models.ImageField(width_field='width_field',
                               height_field='height_field',
                               verbose_name='Фото')

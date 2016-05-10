@@ -58,18 +58,18 @@ class AccessoriesAdmin(admin.ModelAdmin):
     search_fields = ('title',)
 
 
-class BeltsAdmin(admin.ModelAdmin):
-    list_display = ('title', 'created')
-    exclude = ('width_field', 'height_field', 'created')
-    list_filter = ('created',)
-    search_fields = ('title',)
-
-
 class MaterialsAdmin(admin.ModelAdmin):
     list_display = ('material',)
     list_filter = ('created',)
     exclude = ('created',)
     search_fields = ('material',)
+
+
+class SnowboardsAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+    list_filter = ('created',)
+    exclude = ('width_field', 'height_field', 'created')
+    search_fields = ('title',)
 
 
 admin.site.register(Goods, GoodsAdmin)
@@ -80,5 +80,5 @@ admin.site.register(Skateboards, SkateboardsAdmin)
 admin.site.register(Backpacks, BackpacksAdmin)
 admin.site.register(Spectacles, SpectaclesAdmin)
 admin.site.register(Accessories, AccessoriesAdmin)
-admin.site.register(Belts, BeltsAdmin)
 admin.site.register(Materials, MaterialsAdmin)
+admin.site.register(Snowboards, SnowboardsAdmin)
