@@ -1,13 +1,51 @@
 from django.http import HttpResponse, Http404, HttpResponseRedirect
+from django.views.generic import TemplateView
+from django.views.generic import ListView
+from django.views.generic import DetailView
 from .models import *
-# from django.views.generic import TemplateView
 from django.shortcuts import render, render_to_response
 
 
 def shoes(request):
-    shoes = Shoes.objects.all().order_by('title')
-    material = Materials.objects.all().order_by('material')
-    brands = Brands.objects.all().order_by('brand')
+    shoes = Shoes.objects.order_by('title')
+    material = Materials.objects.order_by('material')
+    brands = Brands.objects.order_by('brand')
+    context = {
+        'brands' : brands,
+        'shoes' : shoes,
+        'material' : material,
+    }
+    return render_to_response("shoes.html", context)
+
+
+def shoes_price_up(request):
+    shoes = Shoes.objects.order_by("price")
+    material = Materials.objects.order_by('material')
+    brands = Brands.objects.order_by('brand')
+    context = {
+        'brands' : brands,
+        'shoes' : shoes,
+        'material' : material,
+    }
+    return render_to_response("shoes.html", context)
+
+
+def shoes_price_down(request):
+    shoes = Shoes.objects.order_by("-price")
+    material = Materials.objects.order_by('material')
+    brands = Brands.objects.order_by('brand')
+    context = {
+        'brands' : brands,
+        'shoes' : shoes,
+        'material' : material,
+    }
+    return render_to_response("shoes.html", context)
+
+
+def shoes_new(request):
+    shoes = Shoes.objects.order_by("created")
+    material = Materials.objects.order_by('material')
+    brands = Brands.objects.order_by('brand')
     context = {
         'brands' : brands,
         'shoes' : shoes,
@@ -67,12 +105,6 @@ def backpacks(request):
     }
     return render_to_response("backpacks.html", context)
 
-# def belts(request):
-#     belts = Belts.objects.all()
-#     context = {
-#         'belts' : belts,
-#     }
-#     return render_to_response("belts.html", context)
 
 def snowboards(request):
     snowboards = Snowboards.objects.all()

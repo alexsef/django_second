@@ -48,7 +48,7 @@ class Shoes(models.Model):
         verbose_name = 'Обувь'
         verbose_name_plural = 'Обувь'
 
-    brand = models.ForeignKey(Brands)
+    brand = models.ForeignKey(Brands, verbose_name='Брэнд')
     title = models.CharField(max_length=255, verbose_name='Наименование', blank=True, null=True)
     image = models.ImageField(width_field='width_field',
                               height_field='height_field',
@@ -74,7 +74,7 @@ class Goods(models.Model):
         verbose_name = 'Кепка'
         verbose_name_plural = 'Кепки'
 
-    brand = models.ForeignKey(Brands)
+    brand = models.ForeignKey(Brands, verbose_name='Брэнд')
     title = models.CharField(max_length=255, verbose_name='Наименование', blank=True, null=True)
     image = models.ImageField(width_field='width_field',
                               height_field='height_field',
@@ -99,7 +99,7 @@ class Jacets(models.Model):
         verbose_name_plural = 'Куртки'
 
     sex = models.CharField(max_length=255, verbose_name='Пол', choices=sex_ch, blank=True, null=True)
-    brand = models.ForeignKey(Brands)
+    brand = models.ForeignKey(Brands, verbose_name='Брэнд')
     title = models.CharField(max_length=255, verbose_name='Наименование', blank=True, null=True)
     image = models.ImageField(width_field='width_field',
                               height_field='height_field',
@@ -141,7 +141,7 @@ class Skateboards(models.Model):
         verbose_name = 'Скейтборд'
         verbose_name_plural = 'Скейтборды'
 
-    brand = models.ForeignKey(Brands)
+    brand = models.ForeignKey(Brands, verbose_name='Брэнд')
     type_skate = models.CharField(max_length=255, verbose_name='Тип скейтборда', choices=type_sk, blank=True, null=True)
     title = models.CharField(max_length=255, verbose_name='Наименование', blank=True, null=True)
     price = models.IntegerField(verbose_name='Цена', blank=True, null=True)
@@ -169,7 +169,7 @@ class Backpacks(models.Model):
         verbose_name = 'Рюкзак'
         verbose_name_plural = 'Рюкзаки'
 
-    brand = models.ForeignKey(Brands)
+    brand = models.ForeignKey(Brands, verbose_name='Брэнд')
     title = models.CharField(max_length=255, verbose_name='Наименование', blank=True, null=True)
     size = models.CharField(max_length=255, verbose_name='Размер', choices=backpacks_ch, blank=True, null=True)
     material = models.ForeignKey(Materials, verbose_name='Материал', blank=True, null=True)
@@ -191,7 +191,7 @@ class Spectacles(models.Model):
         verbose_name = 'Очки'
         verbose_name_plural = 'Очки'
 
-    brand = models.ForeignKey(Brands)
+    brand = models.ForeignKey(Brands, verbose_name='Брэнд')
     title = models.CharField(max_length=255, verbose_name='Наименование', blank=True, null=True)
     image = models.ImageField(width_field='width_field',
                               height_field='height_field',
@@ -211,7 +211,7 @@ class Accessories(models.Model):
         verbose_name = 'Аксессуар'
         verbose_name_plural = 'Аксессуары'
 
-    brand = models.ForeignKey(Brands)
+    brand = models.ForeignKey(Brands, verbose_name='Брэнд')
     title = models.CharField(max_length=255, verbose_name='Наименование', blank=True, null=True)
     image = models.ImageField(width_field='width_field',
                               height_field='height_field',
@@ -239,7 +239,7 @@ class Snowboards(models.Model):
         verbose_name = 'Сноуборд'
         verbose_name_plural = 'Сноуборды'
 
-    brand = models.ForeignKey(Brands)
+    brand = models.ForeignKey(Brands, verbose_name='Брэнд')
     title = models.CharField(max_length=255, verbose_name='Наименование', blank=True, null=True)
     price = models.IntegerField(verbose_name='Цена', blank=True, null=True)
     image = models.ImageField(width_field='width_field',
@@ -261,7 +261,7 @@ class Belts(models.Model):
         verbose_name = 'Ремень'
         verbose_name_plural = 'Ремни'
 
-    brand = models.ForeignKey(Brands)
+    brand = models.ForeignKey(Brands, verbose_name='Брэнд')
     title = models.CharField(max_length=255, verbose_name='Наименование', blank=True, null=True)
     image = models.ImageField(width_field='width_field',
                               height_field='height_field',

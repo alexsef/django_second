@@ -32,14 +32,14 @@
         </ul>
     </li>
     <li class="dropdown">
-        <a href="" class="dropdown-toggle" data-toggle="dropdown">Цена<span class="caret"></span>
+        <a href="" class="dropdown-toggle" data-toggle="dropdown">Сортировать<span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
-            <li><a href="">До 4000руб.</a></li>
-            <li><a href="">До 5000руб.</a></li>
-            <li><a href="">До 6000руб.</a></li>
-            <li><a href="">До 7000руб.</a></li>
-            <li><a href="">До 8000руб.</a></li>
+            <li><a href="{% url 'shoes_price' %}">По возростанию цены</a></li>
+            <li><a href="{% url 'shoes_price_down' %}">По убыванию цены</a></li>
+            <li><a href="{% url 'shoes_new' %}">Новинки</a></li>
+            <!-- <li><a href=""></a></li> -->
+            <!-- <li><a href=""></a></li> -->
         </ul>
     </li>
     </ul>
@@ -53,7 +53,6 @@
                         <strong>{{ sh.price }} Р</strong>
                     </div>
                 {% endfor %}
-            
         </div>
     </div>
 {% endblock %}
