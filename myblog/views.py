@@ -1,45 +1,172 @@
 from django.http import HttpResponse, Http404, HttpResponseRedirect
-from django.views.generic import TemplateView
-from django.views.generic import ListView
-from django.views.generic import DetailView
+# from django.views.generic import TemplateView
+# from django.views.generic import ListView
+# from django.views.generic import DetailView
 from .models import *
 from django.shortcuts import render, render_to_response
 
 
 def shoes(request):
     shoes = Shoes.objects.order_by('title')
-    material = Materials.objects.order_by('material')
-    brands = Brands.objects.order_by('brand')
+    shoes1 = Shoes.objects.order_by('material')
+    shoes2 = Shoes.objects.order_by('brand')
     context = {
-        'brands' : brands,
         'shoes' : shoes,
-        'material' : material,
+        'shoes1' : shoes1,
+        'shoes2' : shoes2,
     }
     return render_to_response("shoes.html", context)
 
 
 def shoes_price_up(request):
     shoes = Shoes.objects.order_by("price")
-    material = Materials.objects.order_by('material')
-    brands = Brands.objects.order_by('brand')
+    shoes1 = Shoes.objects.order_by('material')
+    shoes2 = Shoes.objects.order_by('brand')
     context = {
-        'brands' : brands,
         'shoes' : shoes,
-        'material' : material,
+        'shoes1' : shoes1,
+        'shoes2' : shoes2,
     }
     return render_to_response("shoes.html", context)
 
 
 def shoes_price_down(request):
     shoes = Shoes.objects.order_by("-price")
-    material = Materials.objects.order_by('material')
-    brands = Brands.objects.order_by('brand')
+    shoes1 = Shoes.objects.order_by('material')
+    shoes2 = Shoes.objects.order_by('brand')
     context = {
-        'brands' : brands,
         'shoes' : shoes,
-        'material' : material,
+        'shoes1' : shoes1,
+        'shoes2' : shoes2,
     }
     return render_to_response("shoes.html", context)
+
+
+def size41(request):
+    shoes = Shoes.objects.filter(size_41=True)
+    shoes1 = Shoes.objects.order_by('material')
+    shoes2 = Shoes.objects.order_by('brand')
+    context = {
+        'shoes' : shoes,
+        'shoes1' : shoes1,
+        'shoes2' : shoes2,
+    }
+    return render_to_response('shoes.html', context)
+
+
+def size42(request):
+    shoes = Shoes.objects.filter(size_42=True)
+    shoes1 = Shoes.objects.order_by('material')
+    shoes2 = Shoes.objects.order_by('brand')
+    context = {
+        'shoes' : shoes,
+        'shoes1' : shoes1,
+        'shoes2' : shoes2,
+    }
+    return render_to_response('shoes.html', context)
+
+
+def size43(request):
+    shoes = Shoes.objects.filter(size_43=True)
+    shoes1 = Shoes.objects.order_by('material')
+    shoes2 = Shoes.objects.order_by('brand')
+    context = {
+        'shoes' : shoes,
+        'shoes1' : shoes1,
+        'shoes2' : shoes2,
+    }
+    return render_to_response('shoes.html', context)
+
+
+def sh_vans(request):
+    shoes = Shoes.objects.filter(brand='1')
+    shoes1 = Shoes.objects.order_by('material')
+    shoes2 = Shoes.objects.order_by('brand')
+    context = {
+        'shoes' : shoes,
+        'shoes1' : shoes1,
+        'shoes2' : shoes2,
+    }
+    return render_to_response('shoes.html', context)
+
+
+def sh_dc(request):
+    shoes = Shoes.objects.filter(brand='7')
+    shoes1 = Shoes.objects.order_by('material')
+    shoes2 = Shoes.objects.order_by('brand')
+    context = {
+        'shoes' : shoes,
+        'shoes1' : shoes1,
+        'shoes2' : shoes2,
+    }
+    return render_to_response('shoes.html', context)
+
+
+def sh_nike(request):
+    shoes = Shoes.objects.filter(brand='8')
+    shoes1 = Shoes.objects.order_by('material')
+    shoes2 = Shoes.objects.order_by('brand')
+    context = {
+        'shoes' : shoes,
+        'shoes1' : shoes1,
+        'shoes2' : shoes2,
+    }
+    return render_to_response('shoes.html', context)
+
+
+def sh_hl(request):
+    shoes = Shoes.objects.filter(material='1')
+    shoes1 = Shoes.objects.order_by('material')
+    shoes2 = Shoes.objects.order_by('brand')
+    context = {
+        'shoes' : shoes,
+        'shoes1' : shoes1,
+        'shoes2' : shoes2,
+    }
+    return render_to_response('shoes.html', context)
+
+
+def sh_koj(request):
+    shoes = Shoes.objects.filter(material='2')
+    shoes1 = Shoes.objects.order_by('material')
+    shoes2 = Shoes.objects.order_by('brand')
+    context = {
+        'shoes' : shoes,
+        'shoes1' : shoes1,
+        'shoes2' : shoes2,
+    }
+    return render_to_response('shoes.html', context)
+
+
+def sh_zam(request):
+    shoes = Shoes.objects.filter(material='3')
+    shoes1 = Shoes.objects.order_by('material')
+    shoes2 = Shoes.objects.order_by('brand')
+    context = {
+        'shoes' : shoes,
+        'shoes1' : shoes1,
+        'shoes2' : shoes2,
+    }
+    return render_to_response('shoes.html', context)
+
+
+def sh_vo(request):
+    shoes = Shoes.objects.filter(material='4')
+    shoes1 = Shoes.objects.order_by('material')
+    shoes2 = Shoes.objects.order_by('brand')
+    context = {
+        'shoes' : shoes,
+        'shoes1' : shoes1,
+        'shoes2' : shoes2,
+    }
+    return render_to_response('shoes.html', context)
+
+
+
+
+
+
+
 
 
 def shoes_new(request):

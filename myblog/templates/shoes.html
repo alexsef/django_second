@@ -7,9 +7,9 @@
             Размер<span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-                <li><a href="">41</a></li>
-                <li><a href="">42</a></li>
-                <li><a href="">43</a></li>
+                <li><a href="{% url 'size41' %}">41</a></li>
+                <li><a href="{% url 'size42' %}">42</a></li>
+                <li><a href="{% url 'size43' %}">43</a></li>
             </ul>
         </li>
         <li class="dropdown">
@@ -17,18 +17,19 @@
             Брэнд<span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-                {% for brand in brands %}
-                    <li><a href="">{{ brand.brand }}</a></li>
-                {% endfor %}
+                    <li><a href="{% url 'sh_vans' %}">Vans</a></li>
+                    <li><a href="{% url 'sh_dc' %}">DC</a></li>
+                    <li><a href="{% url 'sh_nike' %}">Nike</a></li>
             </ul>
         </li>
     <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Материал <span class="caret"></span>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Материал<span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
-            {% for mat in material %}
-                <li><a href="">{{ mat.material }}</a></li>
-            {% endfor %}
+            <li><a href="{% url 'sh_hl' %}">Хлопок</a></li>
+            <li><a href="{% url 'sh_koj' %}">Кожа</a></li>
+            <li><a href="{% url 'sh_zam' %}">Замша</a></li>
+            <li><a href="{% url 'sh_vo' %}">Войлок</a></li>
         </ul>
     </li>
     <li class="dropdown">
@@ -38,8 +39,6 @@
             <li><a href="{% url 'shoes_price' %}">По возростанию цены</a></li>
             <li><a href="{% url 'shoes_price_down' %}">По убыванию цены</a></li>
             <li><a href="{% url 'shoes_new' %}">Новинки</a></li>
-            <!-- <li><a href=""></a></li> -->
-            <!-- <li><a href=""></a></li> -->
         </ul>
     </li>
     </ul>
