@@ -7,7 +7,7 @@ from django.shortcuts import render, render_to_response
 
 
 def shoes(request):
-    shoes = Shoes.objects.order_by('title')
+    shoes = Shoes.objects.all()
     shoes1 = Shoes.objects.order_by('material')
     shoes2 = Shoes.objects.order_by('brand')
     context = {

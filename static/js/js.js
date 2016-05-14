@@ -4,5 +4,4 @@ window.onload=function(){
 }, function() {
     jQuery(this).find('.dropdown-menu').stop(true, true).fadeOut();
 })
-    // $(".navbar").autoHidingNavbar('setDisableAutohide', true)
 }

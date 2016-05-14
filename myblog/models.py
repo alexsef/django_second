@@ -47,6 +47,7 @@ class Shoes(models.Model):
         db_table = 'Обувь'
         verbose_name = 'Обувь'
         verbose_name_plural = 'Обувь'
+        ordering = ['-title']
 
     brand = models.ForeignKey(Brands, verbose_name='Брэнд')
     title = models.CharField(max_length=255, verbose_name='Наименование', blank=True, null=True)
